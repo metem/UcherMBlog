@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace UcherMBlog.Controllers
+namespace UcherMBlog.Controllers.Web
 {
     public class HomeController : Controller
     {

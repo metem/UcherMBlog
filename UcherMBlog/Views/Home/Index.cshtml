@@ -1,7 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="row">
-
+<div class="container-fluid">
+    <div class="row squareContainer center-block">
+        @for (int i = 0; i < 3*5; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <div class="square btn btn-success col-xs-4 text-center">Title Test</div>
+            }
+            else
+            {
+                <div class="square col-xs-4"></div>
+            }
+        }
+    </div>
 </div>
