@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using UcherMBlog.Models;
 
 namespace UcherMBlog
 {
@@ -23,6 +24,10 @@ namespace UcherMBlog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<BlogContext>();
+            services.AddSingleton(Configuration);
+            services.AddScoped<IBlogRepository, BlogRepository>();
+
             // Add framework services.
             services.AddMvc();
         }
