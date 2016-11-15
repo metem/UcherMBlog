@@ -6,5 +6,6 @@ namespace UcherMBlog.Models
     {
         IEnumerable<Category> GetAllCategories();
         IEnumerable<Article> GetArticlesByCategoryName(string name);
+        Article GetArticleById(int articleId);
     }
 }

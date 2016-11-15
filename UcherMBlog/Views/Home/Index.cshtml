@@ -7,7 +7,7 @@
     <div class="row squareContainer center-block">
         @foreach (var item in Model)
         {
-            <a asp-controller="Home" asp-action="Articles" asp-route-name="@item.Name.ToValidUrl()" class="square btn btn-success col-xs-4 text-center">@item.Name</a>
+            <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="square btn btn-success col-xs-4 text-center">@item.Name</a>
             <div class="square col-xs-4"></div>
         }
     </div>

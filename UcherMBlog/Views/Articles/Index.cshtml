@@ -1,0 +1,38 @@
+﻿@using UcherMBlog.Utils
+@model IEnumerable<UcherMBlog.Models.Article>
+
+@{
+    ViewBag.Title = "Articles";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td>Creation date</td>
+                <td>Author name</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-md-2">
+                    @item.DateCreated.ToString("d")
+                </td>
+                <td class="col-md-2">
+                    @item.AuthorName
+                </td>
+                <td class="col-md-8">
+                    <a asp-controller="Articles"
+                       asp-action="ViewArticle"
+                       asp-route-articleId="@item.Id"
+                       asp-route-articleTitle="@item.Title.ToValidUrl()">
+                        @item.Title
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -22,5 +22,10 @@ namespace UcherMBlog.Models
         {
             return _blogContext.Articles.Where(article => article.Category.Name.ToValidUrl() == name);
         }
+
+        public Article GetArticleById(int articleId)
+        {
+            return _blogContext.Articles.FirstOrDefault(article => article.Id == articleId);
+        }
     }
 }
