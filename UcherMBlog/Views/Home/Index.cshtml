@@ -1,4 +1,5 @@
-﻿@model IEnumerable<UcherMBlog.Models.Category>
+﻿@using UcherMBlog.Utils
+@model IEnumerable<UcherMBlog.Models.Category>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -6,7 +7,7 @@
     <div class="row squareContainer center-block">
         @foreach (var item in Model)
         {
-            <div class="square btn btn-success col-xs-4 text-center">@item.Name</div>
+            <a asp-controller="Home" asp-action="Articles" asp-route-name="@item.Name.ToValidUrl()" class="square btn btn-success col-xs-4 text-center">@item.Name</a>
             <div class="square col-xs-4"></div>
         }
     </div>

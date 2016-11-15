@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.IEnumerable<UcherMBlog.Models.Article>
+
+@{
+    ViewBag.Title = "Articles";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+            </tr>
+        }
+    </table>
+</div>

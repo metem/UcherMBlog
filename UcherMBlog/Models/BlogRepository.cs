@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using UcherMBlog.Utils;
 
 namespace UcherMBlog.Models
 {
@@ -14,6 +16,11 @@ namespace UcherMBlog.Models
         public IEnumerable<Category> GetAllCategories()
         {
             return _blogContext.Categories;
+        }
+
+        public IEnumerable<Article> GetArticlesByCategoryName(string name)
+        {
+            return _blogContext.Articles.Where(article => article.Category.Name.ToValidUrl() == name);
         }
     }
 }

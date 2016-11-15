@@ -5,5 +5,6 @@ namespace UcherMBlog.Models
     public interface IBlogRepository
     {
         IEnumerable<Category> GetAllCategories();
+        IEnumerable<Article> GetArticlesByCategoryName(string name);
     }
 }

@@ -23,5 +23,11 @@ namespace UcherMBlog.Controllers.Web
         {
             return View();
         }
+
+        public IActionResult Articles(string name)
+        {
+            var articles = _blogRepository.GetArticlesByCategoryName(name);
+            return View(articles);
+        }
     }
 }

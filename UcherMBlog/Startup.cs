@@ -53,6 +53,10 @@ namespace UcherMBlog
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "articles",
+                    template: "{controller=Home}/{action=Articles}/{name}");
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
