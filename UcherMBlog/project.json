@@ -4,6 +4,7 @@
     "preserveCompilationContext": true
   },
   "dependencies": {
+    "AutoMapper": "5.1.1",
     "BundlerMinifier.Core": "2.2.306",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Mvc": "1.1.0",

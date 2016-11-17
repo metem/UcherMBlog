@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using UcherMBlog.Models;
+using UcherMBlog.ViewModels;
 
 namespace UcherMBlog.Controllers.Web
 {
@@ -22,6 +25,32 @@ namespace UcherMBlog.Controllers.Web
         {
             var article = _blogRepository.GetArticleById(articleId);
             return View(article);
+        }
+
+        public IActionResult AddArticle()
+        {
+            ViewBag.Categories = _blogRepository.GetAllCategories();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddArticle(ArticleViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var article = Mapper.Map<Article>(model);
+                article.DateCreated = DateTime.Now;
+
+                _blogRepository.AddArticle(article);
+                _blogRepository.SaveAll();
+
+                ModelState.Clear();
+
+                ViewBag.Message = "Article added";
+            }
+
+            ViewBag.Categories = _blogRepository.GetAllCategories();
+            return View();
         }
     }
 }

@@ -7,5 +7,7 @@ namespace UcherMBlog.Models
         IEnumerable<Category> GetAllCategories();
         IEnumerable<Article> GetArticlesByCategoryName(string name);
         Article GetArticleById(int articleId);
+        void AddArticle(Article article);
+        bool SaveAll();
     }
 }

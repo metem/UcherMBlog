@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using UcherMBlog.Models;
+using UcherMBlog.ViewModels;
 
 namespace UcherMBlog
 {
@@ -36,7 +39,7 @@ namespace UcherMBlog
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory,
-            BlogContext blogContext)
+            BlogContext blogContext, IBlogRepository blogRepository)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -62,16 +65,22 @@ namespace UcherMBlog
 
             app.UseStaticFiles();
 
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<Article, ArticleViewModel>()
+                    .ForMember(model => model.CategoryId,
+                        expression => expression.MapFrom(article => article.Category.Name))
+                    .ReverseMap()
+                    .ForMember(article => article.Category,
+                        expression =>
+                            expression.MapFrom(
+                                model =>
+                                    blogRepository.GetAllCategories()
+                                        .FirstOrDefault(category => category.Id == model.CategoryId)));
+            });
+
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "viewArticle",
-                    template: "{controller=Articles}/{category}/{articleId:int}/{articleTitle}/{action=ViewArticle}");
-
-                routes.MapRoute(
-                    name: "articlesList",
-                    template: "{controller=Articles}/{category}/{action=Index}");
-
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

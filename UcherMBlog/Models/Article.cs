@@ -9,6 +9,7 @@ namespace UcherMBlog.Models
         public string Content { get; set; }
         public string AuthorName { get; set; }
         public DateTime DateCreated { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
+        public int CategoryId { get; set; }
     }
 }

@@ -27,5 +27,16 @@ namespace UcherMBlog.Models
         {
             return _blogContext.Articles.FirstOrDefault(article => article.Id == articleId);
         }
+
+        public void AddArticle(Article article)
+        {
+            article.Category = null;
+            _blogContext.Articles.Add(article);
+        }
+
+        public bool SaveAll()
+        {
+            return _blogContext.SaveChanges() > 0;
+        }
     }
 }

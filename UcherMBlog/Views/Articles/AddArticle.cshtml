@@ -1,0 +1,39 @@
+﻿@using System.Threading.Tasks
+@using UcherMBlog.Models
+@model UcherMBlog.ViewModels.ArticleViewModel
+
+
+@{
+    ViewBag.Title = "New article";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>New article</h2>
+        <form method="post">
+            @if (ViewBag.Message != null)
+            {
+                <div>@ViewBag.Message</div>
+            }
+            <div class="form-group">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId">Category</label>
+                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, nameof(Category.Id), nameof(Category.Name)))" class="form-control"></select>
+                <span asp-validation-for="CategoryId" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content">Content</label>
+                <textarea cols="40" rows="4" asp-for="Content" class="form-control"></textarea>
+                <span asp-validation-for="Content" class="text-muted"></span>
+            </div>
+            <div class="form-group">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-default">Cancel</a>
+                <input type="submit" value="Add article" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
