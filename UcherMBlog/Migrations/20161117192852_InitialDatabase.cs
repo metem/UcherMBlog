@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace UcherMBlog.Migrations
 {
@@ -14,7 +13,7 @@ namespace UcherMBlog.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     ArgbColor = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -28,7 +27,7 @@ namespace UcherMBlog.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     AuthorName = table.Column<string>(nullable: true),
                     CategoryId = table.Column<int>(nullable: true),
                     Content = table.Column<string>(nullable: true),

@@ -20,7 +20,7 @@ namespace UcherMBlog.Models
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(_config["ConnectionStrings:BlogContextConnection"]);
+            optionsBuilder.UseSqlite(_config["ConnectionStrings:SqliteDatabase"]);
         }
     }
 }

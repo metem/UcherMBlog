@@ -8,14 +8,13 @@ using UcherMBlog.Models;
 namespace UcherMBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20161115194527_CategoriesData")]
-    partial class CategoriesData
+    [Migration("20161117193003_ExampleData")]
+    partial class ExampleData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.1")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
 
             modelBuilder.Entity("UcherMBlog.Models.Article", b =>
                 {
