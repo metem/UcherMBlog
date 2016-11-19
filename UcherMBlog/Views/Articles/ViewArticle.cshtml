@@ -5,6 +5,9 @@
     ViewBag.Title = @Model.Title;
 }
 
-<div>
-    @Model.Content
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>@Model.Title</h2>
+        @Html.Raw(@Model.Content)
+    </div>
 </div>

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net;
 using AutoMapper;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using UcherMBlog.Models;
 using UcherMBlog.ViewModels;
@@ -8,11 +10,14 @@ namespace UcherMBlog.Controllers.Web
 {
     public class ArticlesController : Controller
     {
+        private readonly IHostingEnvironment _env;
+
         private readonly IBlogRepository _blogRepository;
 
-        public ArticlesController(IBlogRepository blogRepository)
+        public ArticlesController(IBlogRepository blogRepository, IHostingEnvironment env)
         {
             _blogRepository = blogRepository;
+            _env = env;
         }
 
         public IActionResult Index(string category)
@@ -24,6 +29,11 @@ namespace UcherMBlog.Controllers.Web
         public IActionResult ViewArticle(string category, int articleId, string articleTitle)
         {
             var article = _blogRepository.GetArticleById(articleId);
+            if (!_env.IsDevelopment())
+            {
+                //Need to implement XSS protection
+                article.Content = WebUtility.HtmlEncode(article.Content);
+            }
             return View(article);
         }
 
