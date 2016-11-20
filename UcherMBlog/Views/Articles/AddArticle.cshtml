@@ -8,6 +8,8 @@
 }
 
 @section scripts {
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/lib/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
     tinymce.init({
@@ -20,14 +22,15 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <h2>New article</h2>
-        <form method="post">
+        <form method="post" novalidate>
+            @Html.AntiForgeryToken()
             @if (ViewBag.Message != null)
             {
                 <div>@ViewBag.Message</div>
             }
             <div class="form-group">
                 <label asp-for="Title">Title</label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control"/>
                 <span asp-validation-for="Title" class="text-muted"></span>
             </div>
             <div class="form-group">
@@ -42,7 +45,7 @@
             </div>
             <div class="form-group">
                 <a asp-controller="Home" asp-action="Index" class="btn btn-default">Cancel</a>
-                <input type="submit" value="Add article" class="btn btn-success" />
+                <input type="submit" value="Add article" class="btn btn-success"/>
             </div>
         </form>
     </div>

@@ -46,6 +46,8 @@ namespace UcherMBlog.Controllers.Web
         }
 
         [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
         public IActionResult AddArticle(ArticleViewModel model)
         {
             if (ModelState.IsValid)
