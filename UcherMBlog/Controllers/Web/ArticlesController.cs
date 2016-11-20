@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using UcherMBlog.Models;
@@ -31,12 +32,13 @@ namespace UcherMBlog.Controllers.Web
             var article = _blogRepository.GetArticleById(articleId);
             if (!_env.IsDevelopment())
             {
-                //Need to implement XSS protection
+                //TODO: implement XSS protection
                 article.Content = WebUtility.HtmlEncode(article.Content);
             }
             return View(article);
         }
 
+        [Authorize]
         public IActionResult AddArticle()
         {
             ViewBag.Categories = _blogRepository.GetAllCategories();

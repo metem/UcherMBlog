@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace UcherMBlog.Models
 {
-    public class BlogContext : DbContext
+    public class BlogContext : IdentityDbContext<BlogUser>
     {
         private readonly IConfigurationRoot _config;
 

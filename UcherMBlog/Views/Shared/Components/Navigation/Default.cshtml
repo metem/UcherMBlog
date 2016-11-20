@@ -10,7 +10,15 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a asp-controller="Articles" asp-action="AddArticle">Add article</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-controller="Articles" asp-action="AddArticle">Add article</a></li>
+                    <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Auth" asp-action="Login">Login</a></li>
+                }
                 <li><a href="https://pl.linkedin.com/in/ucherm"><i class="fa fa-linkedin"></i></a></li>
                 <li><a href="https://www.facebook.com/mateusz.ucher"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-envelope"></i> Kontakt</a></li>
