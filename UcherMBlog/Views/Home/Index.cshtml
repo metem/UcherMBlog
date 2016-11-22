@@ -4,11 +4,16 @@
     ViewData["Title"] = "Home Page";
 }
 <div class="container-fluid">
-    <div class="row squareContainer center-block">
+    <div class="row">
         @foreach (var item in Model)
         {
-            <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="square btn btn-success col-xs-4 text-center">@item.Name</a>
-            <div class="square col-xs-4"></div>
+            <div class="square">
+                <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="content btn btn-category">
+                    <div class="table">
+                        <div class="table-cell">@item.Name</div>
+                    </div>
+                </a>
+            </div>
         }
     </div>
 </div>

@@ -1,13 +1,94 @@
-﻿body {
+﻿.square {
+    float: left;
+    position: relative;
+    width: 15%;
+    padding-bottom: 15%;
+    margin: 1.66%;
+}
+
+.content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn-category {
+    font-size: 23px;
+    color: #ffffff;
+    background-color: #119cb9;
+    border-color: #075a6b;
+}
+
+    .btn-category:active, .btn-category:hover, .btn-category:focus, .open > .dropdown-toggle.btn-category {
+        color: #ffffff;
+        background-color: #017088;
+        border-color: #003642;
+    }
+
+/* Bootstrap overrides */
+.navbar-inverse {
+    background-color: #1175b9;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+        color: #ffffff;
+        background-color: #0c6bab;
+    }
+
+span.field-validation-error {
+    color: #f04124;
+}
+
+.navbar-toggle {
+    margin-top: 11.5px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
     padding-top: 65px;
+    font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.square {
-    height: 12.5vw;
-    width: 12.5vw;
-    margin: 0.25vw;
+.form-control {
+    margin-bottom: 8px;
 }
 
-.squareContainer {
-    width: 65vw;
+.text-info {
+    color: #fff;
+}
+
+a.text-info:hover,
+a.text-info:focus {
+    color: #fff;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 25px;
+    line-height: 21px;
+    height: 55px;
+}
+
+.navbar-nav > li > a {
+    line-height: 30px;
 }
