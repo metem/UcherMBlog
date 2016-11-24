@@ -5,15 +5,17 @@
 }
 <div class="container-fluid">
     <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="square">
-                <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="content btn btn-category">
-                    <div class="table">
-                        <div class="table-cell">@item.Name</div>
-                    </div>
-                </a>
-            </div>
-        }
+        <div class="col-md-8 col-md-offset-2">
+            @foreach (var item in Model)
+            {
+                <div class="square">
+                    <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="content btn btn-category">
+                        <div class="table">
+                            <div class="table-cell">@item.Name</div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 </div>

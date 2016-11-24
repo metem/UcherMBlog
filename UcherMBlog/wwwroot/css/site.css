@@ -1,9 +1,9 @@
 ﻿.square {
     float: left;
     position: relative;
-    width: 15%;
-    padding-bottom: 15%;
-    margin: 1.66%;
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 4.16%;
 }
 
 .content {
@@ -46,7 +46,7 @@
         background-color: #0c6bab;
     }
 
-span.field-validation-error {
+.field-validation-error {
     color: #f04124;
 }
 
