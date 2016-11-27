@@ -60,7 +60,7 @@ namespace UcherMBlog.Models
                         Title = "First article",
                         AuthorName = "Jan Kowalski",
                         CategoryId = 1,
-                        Content = "test content",
+                        Content = new ArticleContent() {Content =  "test content"},
                         DateCreated = DateTime.Now
                     },
                     new Article()
@@ -68,7 +68,7 @@ namespace UcherMBlog.Models
                         Title = "Second article",
                         AuthorName = "Jan Kowalski",
                         CategoryId = 2,
-                        Content = "test content2",
+                        Content = new ArticleContent() {Content =  "test content2"},
                         DateCreated = DateTime.Now
                     },
                 };

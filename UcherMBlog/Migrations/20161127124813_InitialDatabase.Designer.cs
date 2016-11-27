@@ -8,7 +8,7 @@ using UcherMBlog.Models;
 namespace UcherMBlog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20161119205000_InitialDatabase")]
+    [Migration("20161127124813_InitialDatabase")]
     partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,7 @@ namespace UcherMBlog.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
+                        .IsUnique()
                         .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
@@ -131,8 +132,6 @@ namespace UcherMBlog.Migrations
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<string>("Content");
-
                     b.Property<DateTime>("DateCreated");
 
                     b.Property<string>("Title");
@@ -142,6 +141,23 @@ namespace UcherMBlog.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Articles");
+                });
+
+            modelBuilder.Entity("UcherMBlog.Models.ArticleContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ArticleId");
+
+                    b.Property<string>("Content");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
+
+                    b.ToTable("ArticleContent");
                 });
 
             modelBuilder.Entity("UcherMBlog.Models.BlogUser", b =>
@@ -250,6 +266,14 @@ namespace UcherMBlog.Migrations
                     b.HasOne("UcherMBlog.Models.Category", "Category")
                         .WithMany("Articles")
                         .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("UcherMBlog.Models.ArticleContent", b =>
+                {
+                    b.HasOne("UcherMBlog.Models.Article", "Article")
+                        .WithOne("Content")
+                        .HasForeignKey("UcherMBlog.Models.ArticleContent", "ArticleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

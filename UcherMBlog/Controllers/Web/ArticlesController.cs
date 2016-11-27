@@ -29,11 +29,11 @@ namespace UcherMBlog.Controllers.Web
 
         public IActionResult ViewArticle(string category, int articleId, string articleTitle)
         {
-            var article = _blogRepository.GetArticleById(articleId);
+            var article = _blogRepository.GetArticleByIdWithContent(articleId);
             if (!_env.IsDevelopment())
             {
                 //TODO: implement XSS protection
-                article.Content = WebUtility.HtmlEncode(article.Content);
+                article.Content.Content = WebUtility.HtmlEncode(article.Content.Content);
             }
             return View(article);
         }

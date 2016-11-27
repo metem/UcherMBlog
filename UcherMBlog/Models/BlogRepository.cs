@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using UcherMBlog.Utils;
 
 namespace UcherMBlog.Models
@@ -23,9 +24,11 @@ namespace UcherMBlog.Models
             return _blogContext.Articles.Where(article => article.Category.Name.ToValidUrl() == name);
         }
 
-        public Article GetArticleById(int articleId)
+        public Article GetArticleByIdWithContent(int articleId)
         {
-            return _blogContext.Articles.FirstOrDefault(article => article.Id == articleId);
+            return _blogContext.Articles.Where(article => article.Id == articleId)
+                .Include(article => article.Content)
+                .FirstOrDefault();
         }
 
         public void AddArticle(Article article)
