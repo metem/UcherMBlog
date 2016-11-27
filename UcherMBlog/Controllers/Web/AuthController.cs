@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NUglify.Helpers;
 using UcherMBlog.Models;
-using UcherMBlog.ViewModels;
+using UcherMBlog.ViewModels.Web;
 
 namespace UcherMBlog.Controllers.Web
 {

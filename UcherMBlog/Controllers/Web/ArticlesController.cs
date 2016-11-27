@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using UcherMBlog.Models;
-using UcherMBlog.ViewModels;
+using UcherMBlog.ViewModels.Web;
 
 namespace UcherMBlog.Controllers.Web
 {

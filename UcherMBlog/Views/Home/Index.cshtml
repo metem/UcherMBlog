@@ -1,21 +1,17 @@
-﻿@using UcherMBlog.Utils
-@model IEnumerable<UcherMBlog.Models.Category>
+﻿@model IEnumerable<UcherMBlog.Models.Category>
 @{
     ViewData["Title"] = "Home Page";
 }
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            @foreach (var item in Model)
-            {
-                <div class="square">
-                    <a asp-controller="Articles" asp-action="Index" asp-route-category="@item.Name.ToValidUrl()" class="content btn btn-category">
-                        <div class="table">
-                            <div class="table-cell">@item.Name</div>
-                        </div>
-                    </a>
-                </div>
-            }
-        </div>
-    </div>
+
+@section scripts
+{
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-route/angular-route.min.js"></script>
+    <script src="/lib/angular-animate/angular-animate.min.js"></script>
+    <script src="/js/app-blog.js"></script>
+    <script src="/js/categoriesController.js"></script>
+    <script src="/js/articlesController.js"></script>
+}
+<div class="container-fluid" ng-app="app-blog">
+    <div ng-view class="inner-page"></div>
 </div>

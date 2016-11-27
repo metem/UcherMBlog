@@ -1,0 +1,11 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="square" ng-repeat="category in vm.categories">
+            <a ng-href="#/{{ category.name | toValidUrl }}" class="content btn btn-category">
+                <div class="table">
+                    <div class="table-cell">{{ category.name }}</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

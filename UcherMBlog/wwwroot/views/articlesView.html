@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <a href="#/" class="btn btn-sm btn-default"><i class="fa fa-angle-left"></i>Back</a>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <td>Creation date</td>
+                    <td>Author name</td>
+                    <td>Title</td>
+                </tr>
+                </thead>
+                <tr ng-repeat="article in vm.articles">
+                    <td class="col-md-2">
+                        {{ article.dateCreated | date:'d/M/yyyy' }}
+                    </td>
+                    <td class="col-md-2">
+                        {{ article.authorName }}
+                    </td>
+                    <td class="col-md-8">
+                        <a href="Articles/ViewArticle?category={{vm.category}}&articleId={{article.id}}&articleTitle={{article.title | toValidUrl}}">
+                            {{ article.title }}
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

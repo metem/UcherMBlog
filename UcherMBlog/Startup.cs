@@ -9,8 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using UcherMBlog.Models;
-using UcherMBlog.ViewModels;
+using UcherMBlog.ViewModels.Api;
 
 namespace UcherMBlog
 {
@@ -52,6 +53,9 @@ namespace UcherMBlog
             {
                 if (_env.IsProduction())
                     options.Filters.Add(new RequireHttpsAttribute());
+            }).AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
         }
 
@@ -87,7 +91,10 @@ namespace UcherMBlog
 
             Mapper.Initialize(config =>
             {
-                config.CreateMap<Article, ArticleViewModel>()
+                config.CreateMap<Category, CategoryViewModel>().ReverseMap();
+                config.CreateMap<Article, ArticleViewModel>().ReverseMap();
+
+                config.CreateMap<Article, ViewModels.Web.ArticleViewModel>()
                     .ForMember(model => model.CategoryId,
                         expression => expression.MapFrom(article => article.Category.Name))
                     .ReverseMap()
