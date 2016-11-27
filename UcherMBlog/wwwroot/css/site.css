@@ -22,6 +22,7 @@
 .table-cell {
     display: table-cell;
     vertical-align: middle;
+    font-size: 2vw;
 }
 
 .btn-category {
