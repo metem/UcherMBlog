@@ -1,4 +1,59 @@
-﻿.square {
+﻿a {
+    text-decoration: none !important;
+}
+
+.back {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    font-size: 119px;
+    margin-left: 15px;
+    top: 16vw;
+}
+
+.articleEntry {
+    position: relative;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+span.author {
+    padding: 7px;
+    display: block;
+}
+
+.left {
+    position: relative;
+    border-color: #1175b9;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 14px;
+    display: inline-block;
+    text-align: center;
+}
+
+.right {
+    position: relative;
+    display: inline-block;
+}
+
+.title {
+    position: relative;
+    font-size: 39px;
+    top: -7px;
+    left: 23px;
+}
+
+span.creationDate {
+    display: block;
+    background: #1175b9;
+    padding: 7px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.square {
     float: left;
     position: relative;
     width: 25%;
