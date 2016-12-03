@@ -143,6 +143,10 @@
 
 
 /* Bootstrap overrides */
+.row {
+    margin-bottom: 50px;
+}
+
 .inner-page {
     position: absolute;
     width: 98%;
