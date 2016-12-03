@@ -3,26 +3,27 @@
     ViewBag.Title = "Login";
 }
 @section Scripts {
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/angular/angular.min.js"></script>
 }
-<div class="row">
+<div class="row" ng-app>
     <div class="col-md-4 col-md-offset-4">
-        <form method="post" novalidate>
+        <form method="post" action="?" novalidate name="loginForm">
             @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <label asp-for="Login"></label>
-                <input asp-for="Login" class="form-control"/>
-                <span asp-validation-for="Login"></span>
+                <input asp-for="Login" name="login" ng-model="vm.login" class="form-control" required />
+                <span ng-show="loginForm.login.$error.required" class="text-warning">Login is required.</span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Password"></label>
-                <input type="password" asp-for="Password" class="form-control"/>
-                <span asp-validation-for="Password"></span>
+                <input type="password" name="password" asp-for="Password" ng-model="vm.password" class="form-control" required ng-minlength="5" />
+                <span ng-show="loginForm.password.$error.required" class="text-warning">Password is required.</span>
+                <span ng-show="loginForm.password.$error.minlength" class="text-warning">Password must be at least five characters.</span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-success"/>
+                <input type="submit" value="Login" class="btn btn-success" ng-disabled="!loginForm.$valid" />
                 <a asp-controller="Home" asp-action="Index" class="btn btn-default">Cancel</a>
             </div>
         </form>
