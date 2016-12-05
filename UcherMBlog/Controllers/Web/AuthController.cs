@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NUglify.Helpers;
@@ -10,10 +11,38 @@ namespace UcherMBlog.Controllers.Web
     public class AuthController : Controller
     {
         private readonly SignInManager<BlogUser> _signInManager;
+        private readonly UserManager<BlogUser> _userManager;
 
-        public AuthController(SignInManager<BlogUser> signInManager)
+        public AuthController(SignInManager<BlogUser> signInManager, UserManager<BlogUser> userManager)
         {
             _signInManager = signInManager;
+            _userManager = userManager;
+        }
+
+        [Authorize]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel changePasswordViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var blogUser = await _userManager.GetUserAsync(HttpContext.User);
+                var result = await _userManager.ChangePasswordAsync(blogUser, changePasswordViewModel.CurrentPassword,
+                    changePasswordViewModel.NewPassword);
+
+                if (!result.Succeeded)
+                {
+                    ModelState.AddModelError(string.Empty, "Incorrect password.");
+                }
+            }
+
+            return View();
         }
 
         public IActionResult Login(string returnUrl)
