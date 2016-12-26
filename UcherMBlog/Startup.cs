@@ -42,7 +42,8 @@ namespace UcherMBlog
                 options.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
             }).AddEntityFrameworkStores<BlogContext>();
 
-            services.AddDbContext<BlogContext>();
+            services.AddEntityFrameworkSqlite()
+                .AddDbContext<BlogContext>();
 
             services.AddTransient<BlogContextDataSeeder>();
             services.AddSingleton(Configuration);
