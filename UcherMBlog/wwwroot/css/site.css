@@ -149,6 +149,19 @@ a {
     height: 42px;
 }
 
+.navbar-toggler {
+    color: #fff;
+    width: 100px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.navbar-nav {
+    background: #1175b9;
+}
+
 .navbar-nav .nav-link {
     line-height: 42px;
     padding: 0 1rem;
