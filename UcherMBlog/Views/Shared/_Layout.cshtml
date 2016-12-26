@@ -8,7 +8,6 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link href="~/lib/bootswatch/yeti/bootstrap.css" rel="stylesheet" />
         <link href="~/lib/font-awsome/css/font-awesome.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -16,7 +15,6 @@
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link href="~/lib/bootswatch/yeti/bootstrap.min.css" rel="stylesheet" />
         <link href="~/lib/font-awsome/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
@@ -24,15 +22,13 @@
 <body>
     @await Component.InvokeAsync("Navigation")
 
-    <div class="body-content">
+    <div class="container-fluid">
         @RenderBody()
     </div>
 
-    <div class="nav navbar-inverse navbar-fixed-bottom">
-        <div class="container-fluid">
-            <h5 class="text-center text-info">&copy; @DateTime.Now.Year - Mateusz Ucher</h5>
-        </div>
-    </div>
+    <footer>
+        <p class="text-xs-center">&copy; @DateTime.Now.Year - Mateusz Ucher</p>
+    </footer>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -40,14 +36,8 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
