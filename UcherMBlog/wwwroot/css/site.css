@@ -7,7 +7,7 @@
     position: relative;
     vertical-align: middle;
     float: left;
-    font-size: 119px;
+    font-size: 8rem;
     margin-left: 15px;
     top: 16vw;
 }
@@ -40,9 +40,17 @@
 
 .title {
     position: relative;
-    font-size: 39px;
     top: -7px;
     left: 23px;
+}
+
+.title a {
+    font-size: 2.5rem;
+    color: #008cba;
+}
+
+.title a:hover {
+    color: #008cba;
 }
 
 .creationDate {
@@ -81,14 +89,11 @@
 }
 
 .btn-category {
-    font-size: 23px;
-    color: #ffffff;
     background-color: #119cb9;
     border-color: #075a6b;
 }
 
-    .btn-category:active, .btn-category:hover, .btn-category:focus, .open > .dropdown-toggle.btn-category {
-        color: #ffffff;
+    .btn-category:hover, .btn-category:focus {
         background-color: #017088;
         border-color: #003642;
     }
@@ -104,7 +109,6 @@
     }
 
 /* Bootstrap overrides */
-
 html {
     font-size: 16px;
     position: relative;
@@ -122,7 +126,7 @@ body {
 }
 
 form {
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
 a {
