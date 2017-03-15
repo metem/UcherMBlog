@@ -1,0 +1,22 @@
+﻿<div class="row">
+    <div class="back">
+        <a [routerLink]="['/']">
+            <i class="fa fa-angle-left"></i>
+        </a>
+    </div>
+    <div class="col-md-10 offset-md-1">
+        <div class="articleEntry" *ngFor="let article of articles">
+            <div class="left">
+                <span class="creationDate">{{ article.dateCreated | date:'d/M/yyyy' }}</span>
+                <span class="author">{{ article.authorName }}</span>
+            </div>
+            <div class="right">
+                <div class="title">
+                    <a [routerLink]="['/article', article.id]">
+                        {{ article.title }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
