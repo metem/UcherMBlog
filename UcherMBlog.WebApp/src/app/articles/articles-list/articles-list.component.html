@@ -1,21 +1,14 @@
-﻿<div class="row">
-    <div class="back">
-        <a [routerLink]="['/']">
-            <i class="fa fa-angle-left"></i>
-        </a>
-    </div>
-    <div class="col-md-10 offset-md-1">
-        <div class="articleEntry" *ngFor="let article of articles">
-            <div class="left">
-                <span class="creationDate">{{ article.dateCreated | date:'d/M/yyyy' }}</span>
-                <span class="author">{{ article.authorName }}</span>
-            </div>
-            <div class="right">
-                <div class="title">
-                    <a [routerLink]="['/article', article.id]">
-                        {{ article.title }}
-                    </a>
-                </div>
+﻿<div class="container">
+    <div class="row">
+        <div class="card-columns">
+            <div class="card card-inverse text-center" *ngFor="let article of articles">
+                <a [routerLink]="['/article', article.id]">
+                    <img class="card-img" src="http://lorempixel.com/300/300/" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h3 class="card-title">{{ article.title }}</h3>
+                        <p class="card-text">{{ article.dateCreated | date:'d/M/yyyy' }} {{ article.authorName }}</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

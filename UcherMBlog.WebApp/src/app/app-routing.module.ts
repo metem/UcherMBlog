@@ -1,7 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { ArticlesListComponent } from './articles/articles-list/articles-list.component';
 import { ArticleCreateComponent } from './articles/article-create/article-create.component';
 import { ArticleShowComponent } from './articles/article-show/article-show.component';
@@ -13,14 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 
 
 const routes: Routes = [
-    { path: '', component: CategoriesListComponent },
-    {
-        path: 'category',
-        children:
-        [
-            { path: ':name', component: ArticlesListComponent }
-        ]
-    },
+    { path: '', component: ArticlesListComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'login', component: AuthLoginComponent },
     {

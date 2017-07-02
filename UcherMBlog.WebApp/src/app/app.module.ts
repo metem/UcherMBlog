@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
 import { ArticlesListComponent } from './articles/articles-list/articles-list.component';
 import { ArticleCreateComponent } from './articles/article-create/article-create.component';
 import { ArticleShowComponent } from './articles/article-show/article-show.component';
@@ -19,7 +19,6 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
 @NgModule({
     declarations: [
         AppComponent,
-        CategoriesListComponent,
         ArticlesListComponent,
         ArticleCreateComponent,
         ArticleShowComponent,
@@ -32,6 +31,7 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         RoutingModule

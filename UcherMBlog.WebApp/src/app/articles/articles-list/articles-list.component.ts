@@ -25,6 +25,53 @@ export class ArticlesListComponent implements OnInit {
                 dateCreated: new Date(),
                 authorName: "example author",
                 content: ""
+            },
+                        {
+                id: 2,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },
+                        {
+                id: 3,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },            {
+                id: 4,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },
+                        {
+                id: 5,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },
+                        {
+                id: 6,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },
+                        {
+                id: 7,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
+            },            {
+                id: 8,
+                title: "example title",
+                dateCreated: new Date(),
+                authorName: "example author",
+                content: ""
             }
         ]
     }
