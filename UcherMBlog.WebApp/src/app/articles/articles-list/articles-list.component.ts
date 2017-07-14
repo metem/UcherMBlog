@@ -2,6 +2,7 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Article } from '../../models/article';
 import { routerTransition } from "../../app-routing.animations";
+import { ArticlesRepositoryService } from "../../shared/articles-repository.service";
 
 @Component({
     selector: 'app-articles-list',
@@ -11,69 +12,11 @@ import { routerTransition } from "../../app-routing.animations";
     host: { '[@routerTransition]': '' }
 })
 export class ArticlesListComponent implements OnInit {
+    articles: any;
 
-    public articles: Article[];
-
-    constructor(private route: ActivatedRoute) {}
+    constructor(private route: ActivatedRoute, private articlesRepository: ArticlesRepositoryService) { }
 
     ngOnInit() {
-        this.route.params['name'];
-        this.articles = [
-            {
-                id: 1,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },
-                        {
-                id: 2,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },
-                        {
-                id: 3,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },            {
-                id: 4,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },
-                        {
-                id: 5,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },
-                        {
-                id: 6,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },
-                        {
-                id: 7,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            },            {
-                id: 8,
-                title: "example title",
-                dateCreated: new Date(),
-                authorName: "example author",
-                content: ""
-            }
-        ]
+        this.articles = this.articlesRepository.getArticles();
     }
-
 }

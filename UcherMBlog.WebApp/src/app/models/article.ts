@@ -1,7 +1,7 @@
 ﻿export interface Article {
-    id: number;
     title: string;
-    authorName: string;
-    dateCreated: Date;
-    content: string;
+    image: string;
+    data: string;
+    creationDate: Date;
+    author: string;
 }

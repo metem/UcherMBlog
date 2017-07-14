@@ -7,27 +7,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ArticlesListComponent } from './articles/articles-list/articles-list.component';
-import { ArticleCreateComponent } from './articles/article-create/article-create.component';
 import { ArticleShowComponent } from './articles/article-show/article-show.component';
-import { AuthChangePwdComponent } from './auth/auth-change-pwd/auth-change-pwd.component';
-import { AuthLoginComponent } from './auth/auth-login/auth-login.component';
-import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+
+import { ArticlesRepositoryService } from './shared/articles-repository.service';
+import { SlugFilter } from "./filters/slug";
 
 @NgModule({
     declarations: [
         AppComponent,
         ArticlesListComponent,
-        ArticleCreateComponent,
         ArticleShowComponent,
-        AuthChangePwdComponent,
-        AuthLoginComponent,
-        ContactComponent,
         NavigationComponent,
         FooterComponent,
-        TextEditorComponent
+        TextEditorComponent,
+        SlugFilter
     ],
     imports: [
         BrowserModule,
@@ -36,7 +32,7 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
         HttpModule,
         RoutingModule
     ],
-    providers: [],
+    providers: [ArticlesRepositoryService, SlugFilter],
     bootstrap: [AppComponent]
 })
 export class AppModule {
