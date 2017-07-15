@@ -10,7 +10,6 @@ import { ArticlesListComponent } from './articles/articles-list/articles-list.co
 import { ArticleShowComponent } from './articles/article-show/article-show.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
-import { TextEditorComponent } from './text-editor/text-editor.component';
 
 import { ArticlesRepositoryService } from './shared/articles-repository.service';
 import { SlugFilter } from "./filters/slug";
@@ -22,7 +21,6 @@ import { SlugFilter } from "./filters/slug";
         ArticleShowComponent,
         NavigationComponent,
         FooterComponent,
-        TextEditorComponent,
         SlugFilter
     ],
     imports: [

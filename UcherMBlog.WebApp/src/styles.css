@@ -5,6 +5,23 @@
     height: calc(100% - 75px);
 }
 
+.outer {
+    display: table;
+    position: absolute;
+    height: calc(100% - 75px);
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
 /* Bootstrap overrides */
 
 html {
@@ -50,9 +67,10 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 
-@media (min-width: 576px){
-.card-columns {
-    column-gap: 10rem;
+@media (min-width: 576px) {
+.card-columns>.card {
+    width: inherit;
+    margin-bottom: 3rem;
 }
 }
 

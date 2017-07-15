@@ -1,9 +1,9 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52163/",
+      "applicationUrl": "http://localhost:49990/",
       "sslPort": 0
     }
   },
@@ -16,12 +16,7 @@
       }
     },
     "UcherMBlog.WebApp": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:52164"
+      "commandName": "Project"
     }
   }
 }
