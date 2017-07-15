@@ -1,11 +1,11 @@
-
+﻿
 import {trigger, state, animate, style, transition} from '@angular/core';
 
 export function routerTransition() {
     return opacityTransition();
 }
 
-function opacityTransition() {
+export function opacityTransition() {
     return trigger('routerTransition',
     [
         state('void', style({ position: 'fixed', width: "100%", height: "100%" })),

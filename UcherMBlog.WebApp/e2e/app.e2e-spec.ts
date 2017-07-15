@@ -1,14 +1,14 @@
-import { UcherMBlog.WebAppPage } from './app.po';
+import { UchermBlogPage } from './app.po';
 
-describe('ucher-mblog.web-app App', () => {
-  let page: UcherMBlog.WebAppPage;
+describe('ucherm-blog App', () => {
+  let page: UchermBlogPage;
 
   beforeEach(() => {
-    page = new UcherMBlog.WebAppPage();
+    page = new UchermBlogPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
