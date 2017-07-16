@@ -1,14 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-.scrollable {
-    overflow: scroll;
-    height: calc(100% - 75px);
-}
-
 .outer {
     display: table;
     position: absolute;
-    height: calc(100% - 75px);
     width: 100%;
 }
 
@@ -67,16 +61,25 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 
+.card-columns
+{
+    text-align: center;
+}
+
+.card-columns>.card {
+    border: 0;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 576px) {
 .card-columns>.card {
-    width: inherit;
     margin-bottom: 3rem;
 }
 }
 
 .navbar-toggler {
     color: #fff;
-    width: 100px;
 }
 
 button:hover { cursor: pointer; }

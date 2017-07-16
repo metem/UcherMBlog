@@ -8,8 +8,8 @@ export function routerTransition() {
 export function opacityTransition() {
     return trigger('routerTransition',
     [
-        state('void', style({ position: 'fixed', width: "100%", height: "100%" })),
-        state('*', style({ position: 'fixed', width: "100%", height: "100%" })),
+        state('void', style({ position: 'fixed', width: "100%", height: "calc(100% - 100px)", overflowY: "auto" })),
+        state('*', style({ position: 'fixed', width: "100%", height: "calc(100% - 100px)", overflowY: "auto" })),
         transition(':enter',
         [
             style({ opacity: '0' }),
