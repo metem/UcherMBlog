@@ -1,0 +1,46 @@
+{
+    "articles": [
+        {
+            "title": "RelayCommand - CanExecute, Weak references",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+        {
+            "title": "Xamarin Forms, IoC, View Customization",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+        {
+            "title": "Shared grid size, Design Data, Translations",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+        {
+            "title": "Visual Studio productivity tools and features",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+        {
+            "title": "Thread pool, async, await, task",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+        {
+            "title": "GC & memory leaks",
+            "image": "http://lorempixel.com/300/300/",
+            "data": "/test-article/article.html",
+            "author": "Mateusz Ucher"
+        },
+      {
+        "title": "Integration patterns, akka, rx",
+        "image": "http://lorempixel.com/300/300/",
+        "data": "/test-article/article.html",
+        "author": "Mateusz Ucher"
+      }
+    ]
+}
