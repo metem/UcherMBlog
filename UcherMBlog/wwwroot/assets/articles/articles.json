@@ -2,44 +2,44 @@
     "articles": [
         {
             "title": "Test article",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         },
         {
             "title": "Test article2",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         }
         ,
         {
             "title": "Test article3",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         },
         {
             "title": "Test article4",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         },
         {
             "title": "Test article5",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         },
         {
             "title": "Test article6",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         },
         {
             "title": "Test article7",
-            "image": "http://lorempixel.com/300/300/",
+            "image": "/test-article/article.png",
             "data": "/test-article/article.html",            
             "author": "some author"
         }
