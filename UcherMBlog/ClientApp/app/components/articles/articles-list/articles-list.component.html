@@ -4,7 +4,7 @@
             <div class="card-columns">
                 <div class="card card-inverse text-center" *ngFor="let article of articles | async">
                     <a [routerLink]="['/article', article.title | slug]">
-                        <img width="300" height="300" class="card-img" src="/assets/articles/{{ article.image }}" alt="{{ article.title }}">
+                        <img width="300" height="300" class="card-img" src="/assets/articles{{ article.image }}" alt="{{ article.title }}">
                         <div class="card-img-overlay">
                             <h3 class="card-title">{{ article.title }}</h3>
                             <p class="card-text">{{ article.dateCreated | date:'d/M/yyyy' }} {{ article.authorName }}</p>

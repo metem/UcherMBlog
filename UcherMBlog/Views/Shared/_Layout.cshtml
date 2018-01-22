@@ -6,7 +6,17 @@
     <title>@ViewData["Title"] - UcherMBlog</title>
     <base href="~/" />
     <link rel="manifest" href="~/manifest.json">
-    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/vendor.css" />
+    <meta name="theme-color" content="#1175b9">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(function () {
+                console.log("Service worker registered.");
+            }).catch(function (err) {
+                console.log("Service worker registration error: ", err)
+            });
+        }
+    </script>
 </head>
 <body>
     @RenderBody()
