@@ -14,20 +14,25 @@ namespace UcherMBlog
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private IHostingEnvironment _enviroment; 
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            _enviroment = env;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.Configure<MvcOptions>(options =>
+        {            
+            if (!_enviroment.IsDevelopment())
             {
-                options.Filters.Add(new RequireHttpsAttribute());
-            });            
+                services.Configure<MvcOptions>(options =>
+                {
+                    options.Filters.Add(new RequireHttpsAttribute());
+                });    
+            }        
 
             services.AddMvc();
         }
