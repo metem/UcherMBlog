@@ -14,7 +14,7 @@ import { CoreModule } from './core/core.module';
     declarations: [
         AppComponent,
         NavigationComponent,
-        FooterComponent,
+        FooterComponent
     ],
     imports: [
         SharedModule.forRoot(),

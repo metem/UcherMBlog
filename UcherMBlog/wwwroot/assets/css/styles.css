@@ -1,3 +1,20 @@
+.articleContent img {
+    max-width: 100%;
+}
+
+.articleContent p {
+    margin: 1rem 0;
+}
+
+.articleContent a {
+    color: #1175b9;
+}
+
+    .articleContent a:focus, .articleContent a:hover {
+        color: #1175b9;
+        text-decoration: none;
+    }
+
 .outer {
     display: table;
     position: absolute;
@@ -57,6 +74,7 @@ header {
 
 .card-img-overlay {
     top: inherit;
+    background: #000000;
     background: rgba(0, 0, 0, 0.6);
 }
 

@@ -1,9 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../shared/animations';
 import { ArticlesRepositoryService } from '../../core/articles-repository.service';
 import { Observable } from 'rxjs/Observable';
-import { Article } from '../../models/article';
+import { IArticle } from '../../models/article';
 
 @Component({
     selector: 'app-articles-list',
@@ -13,7 +13,7 @@ import { Article } from '../../models/article';
     host: { '[@routerTransition]': '' }
 })
 export class ArticlesListComponent implements OnInit {
-    articles: Observable<Article[]>;
+    articles: Observable<IArticle[]>;
 
     constructor(private route: ActivatedRoute, private articlesRepository: ArticlesRepositoryService) { }
 

@@ -1,7 +1,6 @@
-﻿export interface Article {
+﻿export interface IArticle {
     title: string;
-    image: string;
-    data: string;
+    path: string;
     creationDate: Date;
     author: string;
 }

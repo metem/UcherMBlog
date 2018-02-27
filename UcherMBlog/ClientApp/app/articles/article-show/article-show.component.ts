@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../shared/animations';
 import { ArticlesRepositoryService } from '../../core/articles-repository.service';
 import { SlugFilter } from '../../shared/filters/slug';
-import { Article } from '../../models/article';
+import { IArticle } from '../../models/article';
 
 @Component({
     selector: 'app-article-show',
@@ -13,7 +13,7 @@ import { Article } from '../../models/article';
     host: { '[@routerTransition]': '' }
 })
 export class ArticleShowComponent implements OnInit {
-    article: Article;
+    article: IArticle;
     articleContent: string;
 
     constructor(private route: ActivatedRoute, private articlesRepository: ArticlesRepositoryService, private slugFilter: SlugFilter) {}
@@ -22,9 +22,9 @@ export class ArticleShowComponent implements OnInit {
         this.route.params.subscribe(params => {
             var title = params['title'];
             this.articlesRepository.getArticles().subscribe(articles => {
-                var article = articles.find(item => this.slugFilter.transform(item.title, new Array<string>()) === title) as Article;
-                var articleContent = this.articlesRepository.getArticleContent(article).subscribe(data => {
-                    this.articleContent = data;
+                var article = articles.find(item => this.slugFilter.transform(item.title, new Array<string>()) === title) as IArticle;
+                this.articlesRepository.getArticleContent(article).subscribe(data => {
+                    this.articleContent = data.replace(/"([\w,\s-]+.png)"/gi, `"/assets/articles${article.path}$1"`);
                     this.article = article;
                 });
             });
