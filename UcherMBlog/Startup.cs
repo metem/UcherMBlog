@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +22,7 @@ namespace UcherMBlog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {            
-            if (!_enviroment.IsDevelopment())
+            if (_enviroment.IsProduction())
             {
                 services.Configure<MvcOptions>(options =>
                 {
@@ -47,6 +43,10 @@ namespace UcherMBlog
                 {
                     HotModuleReplacement = true
                 });
+            }
+            else if (env.IsStaging())
+            {
+                app.UseDeveloperExceptionPage();
             }
             else
             {

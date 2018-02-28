@@ -8,10 +8,7 @@ const FILES_TO_CACHE = [
     '/dist/vendor.css',
     '/dist/vendor.js',
     '/dist/0.js',
-    '/dist/main-client.js',
-    '/assets/articles/articles.json',
-    '/assets/articles/test-article/article.html',
-    '/assets/articles/test-article/article.png'
+    '/dist/main-client.js'
 ];
 
 self.addEventListener('install',
