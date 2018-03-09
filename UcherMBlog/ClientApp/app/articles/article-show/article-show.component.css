@@ -1,0 +1,20 @@
+:host ::ng-deep * {
+    color: #000;
+}
+
+:host ::ng-deep .articleContent img {
+    max-width: 100%;
+}
+
+:host ::ng-deep .articleContent p {
+    margin: 1rem 0;
+}
+
+:host ::ng-deep .articleContent a {
+    color: #1175b9;
+}
+
+    :host ::ng-deep .articleContent a:focus, .articleContent a:hover {
+        color: #1175b9;
+        text-decoration: none;
+    }

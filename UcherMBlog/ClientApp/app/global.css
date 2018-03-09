@@ -1,62 +1,20 @@
-.articleContent img {
-    max-width: 100%;
+*, a, a:hover, a:focus {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-decoration: none;
 }
-
-.articleContent p {
-    margin: 1rem 0;
-}
-
-.articleContent a {
-    color: #1175b9;
-}
-
-    .articleContent a:focus, .articleContent a:hover {
-        color: #1175b9;
-        text-decoration: none;
-    }
-
-.outer {
-    display: table;
-    position: absolute;
-    width: 100%;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.inner {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Bootstrap overrides */
 
 html {
-    font-size: 16px;
     position: relative;
     min-height: 100%;
 }
 
 body {
-    font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
     line-height: 1.5;
-    color: #000;
     background-color: #fff;
     overscroll-behavior-y: contain;
+    font-size: 16px;
 }
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-    a:focus, a:hover {
-        color: #fff;
-        text-decoration: none;
-    }
 
 header {
     height: 55px;
@@ -66,6 +24,7 @@ header {
     font-size: 0.85rem;
     background-color: #1175b9;
     padding: 0;
+    box-shadow: 0 1px 10px 0 #9e9e9e;
 }
 
 .navbar-brand {
@@ -74,8 +33,8 @@ header {
 
 .card-img-overlay {
     top: inherit;
-    background: #000000;
-    background: rgba(0, 0, 0, 0.6);
+    background: #3d7c80;
+    background: rgba(61, 124, 128, 0.71);
 }
 
 .card-columns {
@@ -107,17 +66,15 @@ header {
 .card-columns > .card {
     border: 0;
     width: 300px;
+    margin: 0 auto;
     margin-bottom: 1rem;
+    box-shadow: 2px 2px 4px 0 #eaeaea;
 }
 
 @media (min-width: 576px) {
     .card-columns > .card {
         margin-bottom: 3rem;
     }
-}
-
-.navbar-toggler {
-    color: #fff;
 }
 
 button:hover {
@@ -138,14 +95,9 @@ footer {
     bottom: 0;
     width: 100%;
     height: 35px;
-    color: #fff;
 }
 
     footer p {
         line-height: 35px;
         margin: 0;
     }
-
-.fa-angle-left {
-    color: #008cba;
-}
