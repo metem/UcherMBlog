@@ -4,6 +4,8 @@
 
 :host ::ng-deep .articleContent img {
     max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 :host ::ng-deep .articleContent p {

@@ -1,3 +1,5 @@
+/.vscode/
+/wwwroot/assets/articles/
 /Properties/launchSettings.json
 
 ## Ignore Visual Studio temporary files, build results, and
