@@ -8,7 +8,7 @@ import { IArticle } from '../../models/article';
 @Component({
     selector: 'app-article-show',
     templateUrl: './article-show.component.html',
-    styleUrls: ['./article-show.component.css'],
+    styleUrls: ['./article-show.component.scss'],
     animations: [routerTransition()],
     host: { '[@routerTransition]': '' }
 })

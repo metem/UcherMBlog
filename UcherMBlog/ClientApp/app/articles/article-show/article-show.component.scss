@@ -1,0 +1,27 @@
+:host ::ng-deep {
+
+    * {
+        color: #000;
+    }
+
+    .articleContent {
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        a {
+            color: #1175b9;
+        }
+
+        a:focus, a:hover {
+            color: #1175b9;
+            text-decoration: none;
+        }
+    }
+}
