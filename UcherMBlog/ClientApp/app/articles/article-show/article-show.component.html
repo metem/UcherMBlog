@@ -1,8 +1,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <h2 class="articleTitle">{{ article?.title }}</h2>
-            <div class="articleContent" [innerHTML]="articleContent"></div>
+            <div itemscope itemtype="http://schema.org/Article">
+                <meta itemprop="inLanguage" content="en-US" />
+                <meta itemprop="description" content="{{ article?.title }}" />
+                <meta itemprop="isFamilyFriendly" content="True" />
+                <h2 class="articleTitle" itemprop="name headline">{{ article?.title }}</h2>
+
+                <div itemprop="articleBody" class="articleContent" [innerHTML]="articleContent"></div>
+                
+                Written by:
+                <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+                    <span itemprop="name">
+                        <a itemprop="url" href="https://www.linkedin.com/in/ucherm/">{{ article?.author }}</a>
+                    </span>
+                </span>
+
+                on
+                <time [attr.datetime]="article?.creationDate" itemprop="datePublished">{{ article?.creationDate }}</time>
+            </div>
         </div>
     </div>
 </div>

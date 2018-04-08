@@ -1,8 +1,7 @@
-const APP_CACHE = 'cache';
+const APP_CACHE = 'v2';
 const RUNTIME_CACHE = 'runtime';
 const FILES_TO_CACHE = [
     './',
-    '/service-worker.js',
     '/Home/Error',
     '/favicon.ico',
     '/dist/vendor.css',
