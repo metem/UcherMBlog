@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <article itemscope itemtype="http://schema.org/Article">
+                <meta itemprop="inLanguage" content="en-US" />
+                <meta itemprop="isFamilyFriendly" content="True" />
+                <meta itemprop="image" content="https://ucherm.azurewebsites.net/assets/articles{{ article?.path }}article.png">
+                <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="https://ucherm.azurewebsites.net/assets/foto.png">
+                        <meta itemprop="width" content="500">
+                        <meta itemprop="height" content="550">
+                    </div>
+                    <meta itemprop="name" content="{{ article?.author }}">
+                </div>
+                <h2 class="articleTitle" itemprop="name headline description">{{ article?.title }}</h2>
+
+                <div itemprop="articleBody" class="articleContent" [innerHTML]="articleContent"></div>
+
+                Written by:
+                <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+                    <span itemprop="name">
+                        <a itemprop="url" href="https://www.linkedin.com/in/ucherm/">{{ article?.author }}</a>
+                    </span>
+                </span>
+
+                on
+                <time [attr.datetime]="article?.creationDate" itemprop="datePublished dateModified">{{ article?.creationDate }}</time>
+            </article>
+        </div>
+    </div>
+</div>
