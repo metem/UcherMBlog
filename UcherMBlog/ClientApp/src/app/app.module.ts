@@ -6,10 +6,13 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     SharedModule.forRoot(),
     CoreModule,
     HttpClientModule,
