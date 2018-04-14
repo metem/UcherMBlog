@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../shared/animations';
 import { ArticlesRepositoryService } from '../../core/articles-repository.service';
 import { SlugFilter } from '../../shared/filters/slug';
 import { IArticle } from '../../models/article';
+import { InitParams, FacebookService } from 'ngx-facebook';
 
 @Component({
     selector: 'app-article-show',
@@ -16,7 +17,18 @@ export class ArticleShowComponent implements OnInit {
     article: IArticle;
     articleContent: string;
 
-    constructor(private route: ActivatedRoute, private articlesRepository: ArticlesRepositoryService, private slugFilter: SlugFilter) {}
+    constructor(private route: ActivatedRoute,
+      private articlesRepository: ArticlesRepositoryService,
+      private slugFilter: SlugFilter,
+      private fb: FacebookService) {
+      let initParams: InitParams = {
+        appId: '961669753990368',
+        xfbml: true,
+        version: 'v2.12'
+      };
+
+      fb.init(initParams);
+    }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
