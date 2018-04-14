@@ -1,37 +1,34 @@
+@import '../../variables.scss';
+
 :host ::ng-deep {
+  * {
+    color: #000;
+  }
 
-    * {
-        color: #000;
-    }
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
 
-    img {
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-    }
+  p {
+    margin: 1rem 0;
+  }
 
-    p {
-        margin: 1rem 0;
-    }
-
-    a {
-        color: #1175b9;
-    }
-
-    a:focus, a:hover {
-        color: #1175b9;
-        text-decoration: none;
-    }
+  a, a:focus, a:hover {
+    color: $blue-denim;
+    text-decoration: none;
+  }
 }
 
 .fb-box {
   display: flex;
-}
 
-.fb-left {
-  flex: 1;
-}
+  .fb-left {
+    flex: 1;
+  }
 
-.fb-right > div {
-  margin: 10px;
+  .fb-right > div {
+    margin: 10px;
+  }
 }

@@ -1,0 +1,14 @@
+$blue-denim: #1175b9;
+$blue-denim-dark: #0c6bab;
+$blue-eastern: #1793a0;
+$gray-alto: #d4d4d4;
+
+$header-height: 55px;
+$footer-height: 35px;
+$card-size: 300px;
+
+@mixin box-shadow($top, $left, $blur, $color) {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+}

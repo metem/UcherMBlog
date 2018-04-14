@@ -1,0 +1,9 @@
+@import '../variables.scss';
+
+footer {
+  background-color: $blue-denim;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: $footer-height;
+}

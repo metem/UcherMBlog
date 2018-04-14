@@ -1,15 +1,19 @@
-.outer {
-    display: table;
-    position: absolute;
-    width: 100%;
+@import '../../variables.scss';
+
+.card-img-overlay {
+  top: inherit;
+  background: $blue-eastern;
+  opacity: 0.78;
 }
 
-.middle {
-    display: table-cell;
-    vertical-align: middle;
+.card {
+  width: $card-size;
+  height: $card-size;
+  border: 0;
+  margin: 40px;
+  @include box-shadow(1px, 1px, 4px, $gray-alto);
 }
 
-.inner {
-    margin-left: auto;
-    margin-right: auto;
+.row {
+  justify-content: center;
 }
