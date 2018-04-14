@@ -23,3 +23,15 @@
         text-decoration: none;
     }
 }
+
+.fb-box {
+  display: flex;
+}
+
+.fb-left {
+  flex: 1;
+}
+
+.fb-right > div {
+  margin: 10px;
+}

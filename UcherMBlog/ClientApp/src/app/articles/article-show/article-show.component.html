@@ -28,7 +28,15 @@
         <time [attr.datetime]="article?.creationDate" itemprop="datePublished dateModified">{{ article?.creationDate }}</time>
       </article>
       <hr/>
-      <fb-comments numposts="3" width="100%"></fb-comments>
+      <div class="fb-box">
+        <div class="fb-left">
+          <fb-comments numposts="3" width="100%"></fb-comments>
+        </div>
+        <div class="fb-right">
+          <div><fb-like layout="button_count" size="large"></fb-like></div>
+          <div><fb-share layout="button_count" size="large"></fb-share></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
