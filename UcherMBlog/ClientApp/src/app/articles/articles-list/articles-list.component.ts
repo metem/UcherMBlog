@@ -1,8 +1,8 @@
-﻿import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { routerTransition } from '../../shared/animations';
 import { ArticlesRepositoryService } from '../../core/articles-repository.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { IArticle } from '../../models/article';
 
 @Component({
