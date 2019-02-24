@@ -20,8 +20,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**\bin\**\!(*.pdb)'
+    Contents: '$(Build.SourcesDirectory)\**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
