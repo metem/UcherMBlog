@@ -1,0 +1,20 @@
+{
+  "short_name": "UcherM Blog",
+  "name": "Mateusz Ucher Blog",
+  "display": "standalone",
+  "theme_color": "#1175b9",
+  "background_color": "#1175b9",
+  "icons": [
+    {
+      "src": "assets/icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/"
+}

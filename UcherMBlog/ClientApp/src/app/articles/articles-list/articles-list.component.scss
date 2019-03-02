@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.card-img-overlay {
+  top: inherit;
+  background: $blue-eastern;
+  opacity: 0.78;
+}
+
+.card {
+  width: $card-size;
+  height: $card-size;
+  border: 0;
+  margin: 40px;
+  @include box-shadow(1px, 1px, 4px, $gray-alto);
+}
+
+.row {
+  justify-content: center;
+}

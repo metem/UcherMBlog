@@ -1,0 +1,62 @@
+{
+  "name": "ucherm-blog",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:ssr": "ng run ucherm-blog:server:dev",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "7.2.7",
+    "@angular/common": "7.2.7",
+    "@angular/compiler": "7.2.7",
+    "@angular/core": "7.2.7",
+    "@angular/forms": "7.2.7",
+    "@angular/http": "7.2.7",
+    "@angular/platform-browser": "7.2.7",
+    "@angular/platform-browser-dynamic": "7.2.7",
+    "@angular/platform-server": "7.2.7",
+    "@angular/router": "7.2.7",
+    "@angular/service-worker": "7.2.7",
+    "@nguniversal/module-map-ngfactory-loader": "7.1.0",
+    "core-js": "^2.5.4",
+    "rxjs": "^6.0.0",
+    "zone.js": "^0.8.26",
+    "aspnet-prerendering": "^3.0.1",
+    "bootstrap": "^4.1.3",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "popper.js": "^1.14.3",
+    "ngx-facebook": "2.4.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.4",
+    "@angular/cli": "~7.3.4",
+    "@angular/compiler-cli": "7.2.7",
+    "@angular/language-service": "^7.2.7",
+    "@types/jasmine": "~3.3.9",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~11.10.4",
+    "codelyzer": "~4.5.0",
+    "jasmine-core": "~3.3.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.5",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "typescript": "3.2.4"
+  },
+  "optionalDependencies": {
+    "node-sass": "^4.9.3",
+    "protractor": "~5.4.0",
+    "ts-node": "~8.0.2",
+    "tslint": "~5.13.1"
+  }
+}

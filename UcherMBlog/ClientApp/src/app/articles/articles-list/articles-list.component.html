@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="card text-center" *ngFor="let article of articles | async" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+      <a itemprop="url" [routerLink]="['/article', article.title | slug]">
+        <img class="card-img" src="/assets/articles{{ article.path }}article.png" alt="{{ article.title }}">
+        <div class="card-img-overlay">
+          <h3 class="card-title" itemprop="name">{{ article.title }}</h3>
+          <p class="card-text">{{ article.dateCreated | date:'d/M/yyyy' }} {{ article.authorName }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

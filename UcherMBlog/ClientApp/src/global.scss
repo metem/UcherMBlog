@@ -1,0 +1,21 @@
+@import 'app/variables.scss';
+
+*, a, a:hover, a:focus {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  border: 1px solid $gray-alto;
+}
+
+::-webkit-scrollbar-track {
+  @include box-shadow(0, 0, 20px, $gray-alto);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $blue-denim;
+  border: 2px solid $blue-denim-dark;
+}
