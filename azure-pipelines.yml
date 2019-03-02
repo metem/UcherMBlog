@@ -25,5 +25,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: $(Build.ArtifactStagingDirectory)/UcherMBlog/bin/Release/netcoreapp2.1/publish/
+    pathtoPublish: $(Build.ArtifactStagingDirectory)/UcherMBlog/bin/Release/netcoreapp3.0/publish/
     artifactName: UcherMBlog
