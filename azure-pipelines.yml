@@ -14,6 +14,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    packageType: 'sdk'
+    version: '3.0.100-preview-010184' 
+
 - script: dotnet publish --configuration $(buildConfiguration)
   displayName: 'dotnet publish $(buildConfiguration)'
 
